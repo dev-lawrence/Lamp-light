@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/9acea6f878.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Lamp light landing page</title>
   </head>
   <body>
@@ -13,21 +18,22 @@
         <!-- logo -->
         <a href="#" class="logo"><img src="./img/logo.svg" alt="" /></a>
 
-        <!-- switch -->
-        <div class="switch__wrapper">
-          <input type="radio" name="theme" id="on" />
-          <input type="radio" name="theme" id="off" />
-          <span class="switch__background"></span>
-          <span class="switch__button"></span>
+        <div class="d-flex">
+          <!-- switch -->
+          <div class="switch__wrapper">
+            <input type="radio" name="theme" id="off" />
+            <input type="radio" name="theme" id="on" />
+            <span class="switch__background"></span>
+            <span class="switch__button"></span>
+          </div>
+          <!-- toggle menu -->
+          <div class="toggle-menu"></div>
         </div>
-
-        <!-- toggle menu -->
-        <div class="toggle-menu"></div>
 
         <!-- nav menu -->
         <nav class="nav">
-          <ul>
-            <li><a href="#">home</a></li>
+          <ul class="nav__items">
+            <li><a class="active" href="#">home</a></li>
             <li><a href="#">products</a></li>
             <li><a href="#">services</a></li>
             <li><a href="#">about</a></li>
@@ -37,24 +43,26 @@
       </div>
     </header>
 
-    <!-- Hero section -->
-    <section class="hero">
-      <div class="container d-grid">
-        <div class="hero__text">
-          <h1>request your free energy today.</h1>
+    <!-- Showcase section -->
+    <section class="showcase">
+      <div class="container d-flex">
+        <div class="showcase__text">
+          <h1>Request your free energy today.</h1>
           <p>Is making the switch to LED worth it? Let’s find out</p>
-          <a class="button">
-            <img src="./img/bulb.svg" alt="" />
+          <a href="#" class="button">
+            <i class="fa-solid fa-lightbulb bulb"></i>
             <span>learn more</span>
           </a>
         </div>
 
-        <!-- lamp -->
-        <div class="light">
-          <img src="./img/lamp.png" alt="" />
-          <img src="./img/light.png" alt="" />
+        <!-- Lamp -->
+        <div class="showcase__lamp">
+          <audio class="audio" src="./click.mp3"></audio>
+          <img class="lamp" src="./img/lamp.png" alt="" />
+          <img class="light" src="./img/light.png" alt="" />
         </div>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>
