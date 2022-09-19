@@ -46,7 +46,9 @@ body.fixed {
 
 /* Header section */
 .header {
-  padding-top: 1.5rem;
+  padding: 1.5rem 0;
+  z-index: 1000;
+  background-color: var(--bg-clr);
 }
 
 .header .logo {
@@ -115,14 +117,39 @@ input[type='radio'] {
   z-index: 32;
 }
 
-/* Navigation */
-@media (max-width: 31.25rem) {
+/* Desktop navigation */
+.nav__items {
+  display: flex;
+  align-items: center;
+}
+
+.nav__items li {
+  margin-right: 2rem;
+}
+
+.nav__items a {
+  color: var(--white);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  transition: color 0.2s ease-in;
+}
+
+.nav__items a:hover {
+  color: var(--accent-clr);
+}
+
+.nav__items .active {
+  color: var(--accent-clr);
+}
+
+/* Mobile navigation */
+@media (max-width: 75rem) {
   .nav {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 30;
-    transform: translateX(-33rem);
+    transform: translateX(-333rem);
     text-align: center;
     background-color: var(--bg-clr);
     width: 100%;
@@ -160,9 +187,17 @@ input[type='radio'] {
   .nav__items .active {
     color: var(--accent-clr);
   }
+
+  .showcase__text h1.color {
+    color: var(--accent-clr);
+  }
 }
 
 /* Showcase section */
+.showcase {
+  height: 100vh;
+}
+
 .showcase .d-flex {
   display: flex;
   flex-direction: column-reverse;
@@ -202,13 +237,9 @@ input[type='radio'] {
 
 .showcase__text h1 {
   font-size: 2.3rem;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: 0.5rem;
   transition: color 0.2s ease-in;
-}
-
-.showcase__text h1.color {
-  color: var(--accent-clr);
 }
 
 .button {
@@ -224,4 +255,74 @@ input[type='radio'] {
 
 .button span {
   margin-left: 0.4rem;
+}
+
+/* Brekpoints */
+@media (min-width: 36rem) {
+  .container {
+    width: 576px;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 48rem) {
+  .container {
+    width: 768px;
+  }
+}
+
+/* Desktop version */
+@media (min-width: 75rem) {
+  .container {
+    width: 1100px;
+  }
+
+  /* Toggle menu */
+  .toggle-menu {
+    display: none;
+  }
+
+  /* Switch */
+  .switch__container {
+    width: 100px;
+    position: relative;
+  }
+
+  .switch__wrapper {
+    position: absolute;
+    right: -42rem;
+    top: 10rem;
+    transform: rotate(90deg);
+    z-index: 1000;
+  }
+
+  /* showcase menu */
+
+  .showcase .d-flex {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .showcase__text {
+    transform: translateY(-4rem);
+    text-align: left;
+    max-width: 600px;
+  }
+
+  .showcase__text h1 {
+    font-size: 3.5rem;
+  }
+
+  .showcase__lamp .lamp {
+    width: 200px;
+    position: relative;
+    top: -6rem;
+    z-index: -1;
+  }
+
+  .showcase__lamp .light {
+    top: -6rem;
+  }
 }
